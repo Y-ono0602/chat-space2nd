@@ -1,0 +1,35 @@
+.wrapper
+  .side-container
+    .side-container__header
+      = current_user.name
+      %ul.side-container__header__box
+        %li<
+        = link_to "" do
+          = fa_icon 'edit' , class: "side-container__header__box__icon"
+        %li<
+        = link_to edit_user_path(current_user) do
+          = fa_icon 'cog' , class: "side-container__header__box__icon"
+    = render partial: "group"
+    = render partial: "group"
+    = render partial: "group"
+  .main-container
+    .main-container__header
+      .main-container__header__left-box
+        %p.main-container__header__left-box__group-name
+          sampleGroup
+        %p.main-container__header__left-box__user-name
+          Member : sampleName
+      .main-container__header__right-box
+        = link_to "", class: "main-container__header__right-box__edit-btn" do
+          Edit
+    .main-container__posts
+      = render partial: "post"
+      = render partial: "post"
+    .main-container__form
+      %form.new-message
+        .input-box
+          %input{type: "text", placeholder: "type a message", name: "", class: "input-box__text"}
+          %label.upload-label{for: "upload-icon", class: "input-box__image"}
+            %i.fa.fa-picture-o.fa_image
+            %input{class: "input-box__image__file", type: "file", id: "upload-icon", name: ""}
+        %input{type: "submit", value: "Send", class: "submit-btn"}

@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+.wrapper {
+  display: flex;
+}
+@import "./side-container";
+.main-container {
+  width: calc(100% - 300px);
+  float: left;
+  &__header {
+    height: 100px;
+    background-color: #fff;
+    border-bottom: solid 1px #eee;
+    display: flex;
+    justify-content: space-between;
+    &__left-box {
+      padding: 35px 40px 0 40px;
+      &__group-name {
+        font-size: 2rem;
+        padding-bottom: 15px;
+        color: $gray;
+      }
+      &__user-name {
+        font-size: 1.2rem;
+        color: $light-gray;
+      }
+    }
+    &__right-box {
+      padding: 28px 40px 0 0;
+      &__edit-btn {
+        display: block;
+        text-decoration: none;
+        border: solid 1px $light_blue;
+        color: $light_blue;
+        height: 40px;
+        padding: 0 20px;
+        line-height: 40px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  &__posts{
+    height: calc(100vh - 215px);
+    padding: 46px 40px;
+    background-color: #fafafa;
+    overflow: scroll
+  }
+  .post{
+    padding-bottom: 40px;
+    &__info{
+      display:flex;
+      padding-bottom: 10px;
+      &__user{
+        color: $black;
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+      &__date{
+        color: #999999;
+        font-size: 1.2rem;
+        padding-top: 5px;
+        padding-left: 10px;
+      }
+    }
+    &__text{
+      font-size: 1.4rem;
+      color: $black;
+    }
+  }
+  &__form {
+    height: 90px;
+    padding: 20px 40px;
+    background-color: #ddd;
+  }
+}
+@import "./main-container__form";

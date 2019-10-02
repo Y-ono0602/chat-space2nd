@@ -1,0 +1,35 @@
+.side-container {
+  background-color: #2f3e51;
+  width: 300px;
+  height: calc(100vh - 25px);
+  color: #fff;
+  &__header {
+    padding: 38px 20px;
+    background-color: #253141;
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    &__box {
+      display: flex;
+      &__icon {
+        text-decoration: none;
+        margin-left: 5px;
+        color: #fff;
+        }
+    }
+  }
+  &__group {
+    padding: 0 20px;
+    &__groupName {
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 20px 0 5px;
+    }
+    &__posts {
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+  }
+}
