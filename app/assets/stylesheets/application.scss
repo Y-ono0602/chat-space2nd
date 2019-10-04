@@ -1,7 +1,9 @@
 @import "./reset";
 @import "config/variable";
 @import "font-awesome";
-@import "./messages";
-@import "modules/user.scss";
+@import "modules/messages";
+@import "modules/main-container__form";
+@import "modules/side-container";
+@import "modules/user";
 @import "modules/group";
-@import "modules/flash.scss";
+@import "modules/flash";
