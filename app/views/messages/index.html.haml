@@ -20,9 +20,9 @@
       .main-container__header__right-box
         = link_to "", class: "main-container__header__right-box__edit-btn" do
           Edit
-    .main-container__posts
-      = render partial: "post"
-      = render partial: "post"
+    .main-container__messages
+      = render partial: "message"
+      = render partial: "message"
     .main-container__form
       %form.new-message
         .input-box

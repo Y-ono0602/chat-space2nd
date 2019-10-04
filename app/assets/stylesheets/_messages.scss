@@ -43,13 +43,13 @@ html {
       }
     }
   }
-  &__posts{
+  &__messages{
     height: calc(100vh - 190px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll
   }
-  .post{
+  .message{
     padding-bottom: 40px;
     &__info{
       display:flex;
