@@ -4,7 +4,7 @@
       = current_user.name
       %ul.side-container__header__box
         %li<
-        = link_to "" do
+        = link_to new_group_path do
           = fa_icon 'edit' , class: "side-container__header__box__icon"
         %li<
         = link_to edit_user_path(current_user) do
