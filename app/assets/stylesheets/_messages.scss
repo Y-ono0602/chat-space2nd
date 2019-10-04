@@ -4,7 +4,7 @@
 html {
   font-size: 62.5%;
 }
-.wrapper {
+.chat-wrapper {
   display: flex;
 }
 @import "./side-container";
@@ -44,7 +44,7 @@ html {
     }
   }
   &__posts{
-    height: calc(100vh - 215px);
+    height: calc(100vh - 190px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll

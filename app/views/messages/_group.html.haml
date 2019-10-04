@@ -1,5 +1,7 @@
 .side-container__group
-  %p.side-container__group__groupName
-    groupName
-  %p.side-container__group__posts
-    posts
+  - current_user.groups.each do |group|
+    = link_to '#' do
+      %p.side-container__group__groupName
+        = group.name
+      %p.side-container__group__posts
+        メッセージはまだありません。
