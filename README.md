@@ -6,7 +6,7 @@
 |password|string|null: false|
 |name|string|null: false|
 ### Association
-- has_many :posts
+- has_many :messages
 - has_many :group,  through:  :group_users
 - has_many :group_users
 
@@ -18,7 +18,7 @@
 
 ### Association
 - has_many :users, through: :group_users
-- has_many :posts
+- has_many :messages
 - has_many :group_users
 
 
@@ -33,7 +33,7 @@
 - belongs_to :user
 
 
-## postsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|
