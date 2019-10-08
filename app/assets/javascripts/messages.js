@@ -1,11 +1,6 @@
 $(function(){
   function buildMessage(message){
-    if(message.image == null) {
-      var imageUrl = '';
-    }
-    else {
-      var imageUrl = `<img class="" src="${message.image}" alt="">`;
-    }
+    var imageUrl = message.image === null ? '' : `<img class="" src="${message.image}" alt="">`
     var html = `<div class="message">
                 <div class="message__info">
                 <p class="message__info__user">
