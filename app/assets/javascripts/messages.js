@@ -1,22 +1,11 @@
 $(function(){
   function buildMessage(message){
-    if(message.image == null){
-    var html = `<div class="message">
-                <div class="message__info">
-                <p class="message__info__user">
-                ${message.name}
-                </p>
-                <p class="message__info__date">
-                ${message.time}
-                </p>
-                </div>
-                <p class="message__text">
-                ${message.content}
-                </p>
-                </div>`
-    return html;
+    if(message.image == null) {
+      var imageUrl = '';
     }
     else {
+      var imageUrl = `<img class="" src="${message.image}" alt="">`;
+    }
     var html = `<div class="message">
                 <div class="message__info">
                 <p class="message__info__user">
@@ -29,10 +18,10 @@ $(function(){
                 <p class="message__text">
                 ${message.content}
                 </p>
-                <img class="" src="${message.image}" alt="">
+                ${imageUrl}
                 </div>`
                 return html;
-    }}
+    }
 
   $('#new_message').on('submit',function(e){
     e.preventDefault();
@@ -49,8 +38,7 @@ $(function(){
     .done(function(message){
       var html = buildMessage(message);
       $('.main-container__messages').append(html)
-      $(window).scrollTop(300);
-      $('.input-box__text').val('')
+      $("form")[0].reset();
       $('.submit-btn').prop('disabled', false);
       $('.main-container__messages').removeAttr('disabled');
       $('.main-container__messages').animate({ scrollTop: $('.main-container__messages')[0].scrollHeight});
