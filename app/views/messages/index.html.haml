@@ -5,14 +5,15 @@
       .main-container__header__left-box
         %p.main-container__header__left-box__group-name
           = @group.name
-        %p.main-container__header__left-box__user-name
+        %ul.main-container__header__left-box__user-name
           Member : 
-          = current_user.name
+          %li.member
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
       .main-container__header__right-box
-        = link_to edit_group_path(current_user), class: "main-container__header__right-box__edit-btn" do
+        = link_to edit_group_path([@group]), class: "main-container__header__right-box__edit-btn" do
           Edit
     .main-container__messages
-      //= render partial: "messages/message
       = render partial: "message", collection: @messages
     .main-container__form
       .new-message
