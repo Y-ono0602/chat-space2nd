@@ -3,8 +3,8 @@ $(function() {
   function appendUser(user) {
     var html = `
                   <div class="chat-group-user clearfix">
-                    <p class="chat-group-user__name">${user.name}</p>
-                      <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
+                  <p class="chat-group-user__name">${user.name}</p>
+                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
                   </div>
                `
    return html;
@@ -21,8 +21,8 @@ $(function() {
     })
 
     .done(function(users) {
-      $(".user-search-result").empty();
-      if (users.length !== 0) {
+      $(".chat-group-form__search .chat-group-user").empty();
+      if (input.length !== 0) {  //値が等しくないもしくは型が等しくなければtrueを返す
         users.forEach(function(user) {
           var html = appendUser(user);
           $(".chat-group-form__search").append(html);
@@ -50,9 +50,24 @@ $(function() {
     });
   
     $(document).on("click",".user-search-remove", function() {
+      
       $input = $(this);
       $input.parent().remove();
     });
   });
 });
 });
+
+
+
+// .done(function(users) {
+//   if (users.length !== 0) {  //値が等しくないもしくは型が等しくなければtrueを返す
+//     users.forEach(function(user) {
+//       var html = appendUser(user);
+//       $(".chat-group-form__search").append(html);
+//     });
+//   }
+// })
+// .fail(function(){
+//   alert('ユーザー検索に失敗しました');
+// });
