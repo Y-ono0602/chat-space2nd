@@ -4,14 +4,16 @@
     .main-container__header
       .main-container__header__left-box
         %p.main-container__header__left-box__group-name
-          sampleGroup
-        %p.main-container__header__left-box__user-name
-          Member : sampleName
+          = @group.name
+        %ul.main-container__header__left-box__user-name
+          Member : 
+          %li.member
+            - @group.group_users.each do |group_user|
+              = group_user.user.name
       .main-container__header__right-box
-        = link_to "", class: "main-container__header__right-box__edit-btn" do
+        = link_to edit_group_path([@group]), class: "main-container__header__right-box__edit-btn" do
           Edit
     .main-container__messages
-      //= render partial: "messages/message
       = render partial: "message", collection: @messages
     .main-container__form
       .new-message
@@ -22,12 +24,3 @@
               = fa_icon 'picture-o'
               = f.file_field :image, class: 'input-box__image__file'
             = f.submit 'Send', class: 'submit-btn'
--# form_forの書き方を学んでclass設定を修正
-    -# .main-container__form
-    -#   %form.new-message
-    -#     .input-box
-    -#       %input{type: "text", placeholder: "type a message", name: "", class: "input-box__text"}
-    -#       %label.upload-label{for: "upload-icon", class: "input-box__image"}
-    -#         %i.fa.fa-picture-o.fa_image
-    -#         %input{class: "input-box__image__file", type: "file", id: "upload-icon", name: ""}
-    -#     %input{type: "submit", value: "Send", class: "submit-btn"}

@@ -11,7 +11,8 @@
   .side-container__group
     - current_user.groups.each do |group|
       = link_to group_messages_path(group) do
-        %p.side-container__group__groupName
-          = group.name
-        %p.side-container__group__messages
-          = group.show_last_message
+        .group
+          %p.side-container__group__groupName
+            = group.name
+          %p.side-container__group__messages
+            = group.show_last_message
