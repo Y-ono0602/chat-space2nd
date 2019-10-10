@@ -22,7 +22,7 @@ $(function() {
 
     .done(function(users) {
       $(".chat-group-form__search .chat-group-user").empty();
-      if (input.length !== 0) {  //値が等しくないもしくは型が等しくなければtrueを返す
+      if (input.length !== 0) {
         users.forEach(function(user) {
           var html = appendUser(user);
           $(".chat-group-form__search").append(html);
@@ -57,17 +57,3 @@ $(function() {
   });
 });
 });
-
-
-
-// .done(function(users) {
-//   if (users.length !== 0) {  //値が等しくないもしくは型が等しくなければtrueを返す
-//     users.forEach(function(user) {
-//       var html = appendUser(user);
-//       $(".chat-group-form__search").append(html);
-//     });
-//   }
-// })
-// .fail(function(){
-//   alert('ユーザー検索に失敗しました');
-// });
