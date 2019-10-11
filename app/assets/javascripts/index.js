@@ -33,6 +33,7 @@ $(function() {
       alert('ユーザー検索に失敗しました');
     });
   });
+});
 
 });
     function clickHTML(user){
@@ -56,4 +57,3 @@ $(function() {
       $input = $(this);
       $input.parent().remove();
     });
-});
