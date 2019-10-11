@@ -32,6 +32,7 @@ $(function() {
     .fail(function(){
       alert('ユーザー検索に失敗しました');
     });
+  });
 
     function clickHTML(user){
       var userId = user.attr("data-user-id");
@@ -54,6 +55,6 @@ $(function() {
       $input = $(this);
       $input.parent().remove();
     });
-  });
+
 });
 });
