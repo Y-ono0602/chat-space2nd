@@ -1,3 +1,7 @@
+.side-bar {
+  height: calc(100vh - 100px);
+  overflow: scroll;
+}
 .side-container {
   background-color: #2f3e51;
   width: 300px;

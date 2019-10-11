@@ -8,11 +8,12 @@
       %li<
       = link_to edit_user_path(current_user) do
         = fa_icon 'cog' , class: "side-container__header__box__icon"
-  .side-container__group
-    - current_user.groups.each do |group|
-      = link_to group_messages_path(group) do
-        .group
-          %p.side-container__group__groupName
-            = group.name
-          %p.side-container__group__messages
-            = group.show_last_message
+  .side-bar
+    .side-container__group
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group
+            %p.side-container__group__groupName
+              = group.name
+            %p.side-container__group__messages
+              = group.show_last_message

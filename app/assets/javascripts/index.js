@@ -34,6 +34,7 @@ $(function() {
     });
   });
 
+});
     function clickHTML(user){
       var userId = user.attr("data-user-id");
       var html = `<div class='chat-group-user clearfix js-chat-member' id='${userId}'>
@@ -49,12 +50,10 @@ $(function() {
       $("#search-users").append(add_user_html);
         $input.parent()[0].remove();
     });
-  
+
     $(document).on("click",".user-search-remove", function() {
       
       $input = $(this);
       $input.parent().remove();
     });
-
-});
 });
